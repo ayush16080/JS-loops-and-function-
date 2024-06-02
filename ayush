@@ -1,0 +1,30 @@
+let nftCollection = [];
+
+function mintNFT(name, description, artist) {
+    let nft = {
+        name: name,
+        description: description,
+        artist: artist
+    };
+    nftCollection.push(nft);
+}
+
+function listNFTs() {
+    nftCollection.forEach(nft => {
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Artist: " + nft.artist);
+    });
+}
+
+
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+mintNFT("NFT 1", "Description of NFT 1", "Artist 1");
+mintNFT("NFT 2", "Description of NFT 2", "Artist 2");
+mintNFT("NFT 3", "Description of NFT 3", "Artist 3");
+
+listNFTs();
+console.log("Total Supply: " + getTotalSupply());
